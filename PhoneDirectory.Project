@@ -1,0 +1,136 @@
+   package com.mycompany.phonedirectory;
+        
+        import java.util.Scanner;
+
+        import java.util.ArrayList;
+public class PhoneDirectory{
+    
+    private final ArrayList<Contacts> PhoneDirectory = new ArrayList<Contacts>();
+    
+    public PhoneDirectory(){
+         Scanner input = new Scanner(System.in);
+        
+         System.out.println("1. What would you like to do");
+         System.out.println("2. Add Contact");
+         System.out.println("3. Search Contact");
+         System.out.println("4. Delete a Contact");
+         System.out.println("5. Replace a Number");
+         System.out.println("6. Display All Contacts");
+         System.out.println("7. Block a number");
+    }
+    public static void main(String[] args) {
+       displayMenu();
+    }
+    public static void displayMenu(){
+}
+package com.mycompany.phonedirectory;
+
+import java.util.GregorianCalendar;
+
+public class Contacts {
+    private String fName;  // First Name
+    private String lName;  // Last Name
+    private String[] phoneNum; // Array of phone numbers
+    private String affiliation; // Affiliation of the contact
+    private String occupation; // Occupation of the contact
+    private String note = ""; // Note associated with the contact
+    private GregorianCalendar dob; // Date of Birth
+    private boolean blocked; // Blocked status
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public String[] getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String[] phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getAffiliation() {
+        return affiliation;
+    }
+
+    public void setAffiliation(String affiliation) {
+        this.affiliation = affiliation;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public GregorianCalendar getDob() {
+        return dob;
+    }
+
+    public void setDob(GregorianCalendar dob) {
+        this.dob = dob;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+    
+    
+    
+}
+package com.mycompany.phonedirectory;
+
+import java.util.ArrayList;
+
+public class Directory {
+    private ArrayList<Contacts> directory; 
+
+   
+    public Directory() {
+        this.directory = new ArrayList<>();
+    }
+
+   
+    public Directory(ArrayList<Contacts> directory) {
+        this.directory = directory;
+    }
+
+    
+    
+    public void addContact(Contacts contact) {
+        directory.add(contact);
+    }
+
+    
+    public boolean removeContact(String firstName) {
+        return directory.removeIf(contact -> contact.getFName().equalsIgnoreCase(firstName));
+    }
+
+   
+}
